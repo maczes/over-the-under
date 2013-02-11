@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>logging.web</groupId>
+	<artifactId>loggingweb</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>loggingweb</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>loggingweb-ejb</module>
+		<module>loggingweb-jsf</module>
+		<module>loggingweb-jsp</module>
+    <module>loggingweb-util</module>
+  </modules>
+
+	<!-- entire project dependency versions mgmt -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- <dependency> <groupId>javax</groupId> <artifactId>javaee-api</artifactId> 
+				<version>6.0</version> </dependency> //this is only interface jee6- do not 
+				provide impl. //ISSUES DURING MAVEN BUILD(TESTS FAILS) //glassfish-embedded-all 
+				USED INSTEAD -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.main.extras</groupId>
+				<artifactId>glassfish-embedded-all</artifactId>
+				<version>3.1.2</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.5</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>14.0-rc1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

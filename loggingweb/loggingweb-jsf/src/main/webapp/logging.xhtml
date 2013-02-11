@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<title>Logging JSF page</title>
+</head>
+
+<body>
+  
+  <h:form>
+		<h:dataTable id="loggersTable" var="logger"
+			value="#{loggingBean.loggersDataModel}"
+			rowClasses="odd, even"
+			rendered="#{loggingBean.loggersDataModel.rowCount > 0}"
+			rows="50">
+	
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="No." />
+				</f:facet>
+				<h:panelGrid rendered="#{not empty logger.name}">
+					<h:outputText
+						value="#{loggingBean.loggersDataModel.rowIndex + 1}. " />
+				</h:panelGrid>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Logger Name" />
+				</f:facet>
+				<h:panelGrid rendered="#{not empty logger.name}">
+					<h:outputText value="#{logger.name}" />
+				</h:panelGrid>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Logger level" />
+				</f:facet>
+				<h:panelGrid rendered="#{not empty logger.name}">
+					<h:outputText value="#{logger.level}" />
+				</h:panelGrid>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="New level" />
+				</f:facet>
+				<h:selectOneMenu value="#{logger.level}" 
+								 immediate="true"
+								 valueChangeListener="#{loggingBean.loggerLevelChanged}">               
+    				  <f:selectItem 
+		                itemLabel="#{logger.level}"
+		                itemValue="#{logger.level}" />
+		           	  <f:selectItems value="#{loggingBean.levelsDataModel}" />
+		           	  <f:converter converterId="LevelConverter" />
+				</h:selectOneMenu>
+			</h:column>
+		</h:dataTable>
+ 		<h:commandButton action="#{loggingBean.saveLoggersLevels}" value="Submit" />
+	</h:form>
+	
+	
+</body>
+</html>
