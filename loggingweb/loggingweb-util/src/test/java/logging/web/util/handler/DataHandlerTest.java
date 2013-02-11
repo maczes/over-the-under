@@ -1,4 +1,4 @@
-package logging.web.ejb.bean;
+package logging.web.util.handler;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
@@ -10,7 +10,8 @@ import java.util.TreeSet;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import logging.web.ejb.util.LoggersRetriever;
+import logging.web.util.LoggersRetriever;
+import logging.web.util.handler.DataHandler;
 
 import org.junit.Before;
 import org.junit.Test;

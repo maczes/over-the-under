@@ -16,10 +16,10 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 
-import logging.web.ejb.bean.DataHandler;
-import logging.web.ejb.util.LoggersFilter;
-import logging.web.ejb.util.LoggersPrinter;
 import logging.web.jsf.constants.Messages;
+import logging.web.util.LoggersFilter;
+import logging.web.util.LoggersPrinter;
+import logging.web.util.handler.DataHandler;
 
 @ManagedBean(name = "loggingBean")
 @SessionScoped

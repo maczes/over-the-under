@@ -1,9 +1,11 @@
-package logging.web.ejb.util;
+package logging.web.util;
 
 import java.util.Comparator;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.logging.Logger;
+
+import logging.web.util.LoggersPrinter;
 
 import org.junit.Before;
 import org.junit.Test;

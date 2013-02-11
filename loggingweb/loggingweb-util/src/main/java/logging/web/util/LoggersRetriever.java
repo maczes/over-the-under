@@ -1,4 +1,4 @@
-package logging.web.ejb.util;
+package logging.web.util;
 
 import java.util.Comparator;
 import java.util.Enumeration;

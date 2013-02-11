@@ -1,4 +1,4 @@
-package logging.web.ejb.bean;
+package logging.web.util.handler;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,9 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import logging.web.ejb.util.LoggersFilter;
-import logging.web.ejb.util.LoggersPrinter;
-import logging.web.ejb.util.LoggersRetriever;
+import logging.web.util.LoggersFilter;
+import logging.web.util.LoggersPrinter;
+import logging.web.util.LoggersRetriever;
 
 public class DataHandler implements Serializable {
 	

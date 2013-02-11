@@ -2,7 +2,7 @@
 <%@ page import="java.util.logging.Logger" %> 
 <%@ page import="java.util.logging.Level" %>
 <%@ page import="java.util.Set" %> 
-<%@ page import="logging.web.ejb.bean.DataHandler" %>
+<%@ page import="logging.web.util.handler.DataHandler" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
   
@@ -13,7 +13,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<%  
+<%
 	Logger pagelogger = Logger.getLogger("loggingUtil.jsp");
 	int loggersAttrSize = 0;  
 	int levelsAttrSize = 0;  
@@ -34,7 +34,7 @@
     }
 %>  
  	
-	<jsp:useBean id="dataHandler" class="logging.web.ejb.bean.DataHandler" scope="session"/> 
+	<jsp:useBean id="dataHandler" class="logging.web.util.handler.DataHandler" scope="session"/> 
 
 	all loggers size :<%= dataHandler.getLoggers().size() %>
 	<BR>

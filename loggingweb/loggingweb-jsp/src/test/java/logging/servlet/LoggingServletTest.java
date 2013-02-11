@@ -9,8 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import logging.web.ejb.bean.DataHandler;
-import logging.web.ejb.util.LoggersFilter;
+import logging.web.util.LoggersFilter;
+import logging.web.util.handler.DataHandler;
 
 import org.junit.Before;
 import org.junit.Ignore;

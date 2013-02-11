@@ -14,7 +14,9 @@
 	<title>Log settings page</title>
 </head>
 <body>
-<%	Logger loggingpagelogger = Logger.getLogger("logging.jsp"); %>
+<%
+	Logger loggingpagelogger = Logger.getLogger("logging.jsp");
+%>
 
  	<form id="submitForm" method="POST" action="">  
 	<table>

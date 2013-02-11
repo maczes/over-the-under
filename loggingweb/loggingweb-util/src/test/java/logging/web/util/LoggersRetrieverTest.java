@@ -1,21 +1,19 @@
-package logging.web.ejb.util;
+package logging.web.util;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
+
+import logging.web.util.LoggersRetriever;
 
 import org.junit.Before;
 import org.junit.Test;
 
 
-
-public class LoggersFilterTest {
-	
-	LoggersFilter filter;
-	
+public class LoggersRetrieverTest {
 	private static final String FILTER_EXPRESSION = "my.loggers";
 	
 	private Logger log1 = Logger.getLogger(FILTER_EXPRESSION + "log1");
@@ -25,8 +23,7 @@ public class LoggersFilterTest {
 	LogManager logManager;
 	LoggersRetriever loggersRetriever;
 	
-	public LoggersFilterTest() {
-		filter = new LoggersFilter(FILTER_EXPRESSION);
+	public LoggersRetrieverTest() {
 		loggersRetriever = new LoggersRetriever();
 	}
 	
@@ -39,15 +36,10 @@ public class LoggersFilterTest {
 	}
 	
 	@Test
-	public void shouldFilterLoggers(){
+	public void shouldRetrieveLoggers(){
 		SortedSet<Logger> retrieveLoggers = loggersRetriever.retrieveLoggers(logManager);
 		
-		assertTrue(retrieveLoggers.size() > 2);
-		assertTrue(retrieveLoggers.contains(log1) && retrieveLoggers.contains(log2));
-		
-		Set<Logger> filteringResult = filter.filter(retrieveLoggers);
-	
-		assertTrue(filteringResult.size() == 2);
-		assertTrue(filteringResult.contains(log1) && retrieveLoggers.contains(log2));
+		assertNotNull(retrieveLoggers);
+		assertTrue(retrieveLoggers.size() > 0);
 	}
 }
