@@ -21,7 +21,7 @@ public class DataHandler implements Serializable {
 	
 	private SortedSet<Logger> loggers;
 	
-	//@Inject //DOES NOT WORK! WHY???
+	//@Inject //DOES NOT WORK! WHY????
 	LoggersRetriever loggersRetriever;
 	
 	public DataHandler() {
