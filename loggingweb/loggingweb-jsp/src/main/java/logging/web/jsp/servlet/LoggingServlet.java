@@ -1,4 +1,4 @@
-package logging.servlet;
+package logging.web.jsp.servlet;
 
 import java.io.IOException;
 import java.util.SortedSet;
@@ -45,7 +45,7 @@ public class LoggingServlet extends HttpServlet {
 		session.setAttribute("levels", dataHandler.getLevels());
 		//request.setAttribute("levels", dataHandler.getLevels());
 		
-		getServletContext().getRequestDispatcher("/WEB-INF/page/logging.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/WEB-INF/page/logging1.jsp").forward(request, response);
 	}
 	
 	@Override
@@ -57,7 +57,7 @@ public class LoggingServlet extends HttpServlet {
 		SortedSet<Logger> so = (SortedSet<Logger>)request.getAttribute("submitForm");
 		so.size();
 		}
-		getServletContext().getRequestDispatcher("/WEB-INF/page/logging.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/WEB-INF/page/logging1.jsp").forward(request, response);
 	}
 
 }

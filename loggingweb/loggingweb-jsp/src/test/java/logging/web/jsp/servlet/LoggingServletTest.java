@@ -1,4 +1,4 @@
-package logging.servlet;
+package logging.web.jsp.servlet;
 
 import java.io.IOException;
 import java.util.logging.LogManager;
@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import logging.web.jsp.servlet.LoggingServlet;
 import logging.web.util.LoggersFilter;
 import logging.web.util.handler.DataHandler;
 

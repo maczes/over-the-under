@@ -12,7 +12,7 @@
 	</servlet>
 	<servlet>
 		<servlet-name>logging1</servlet-name>
-		<servlet-class>logging.servlet.LoggingServlet</servlet-class>
+		<servlet-class>logging.web.jsp.servlet.LoggingServlet</servlet-class>
 	</servlet>
 
 <!-- mappings -->	
